@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="bmi.css">
+  </head>
+<body>
+  <div class="container">
+    <h1>BMI Calculator</h1>
+
+    <form id="bmiForm">
+      <div class="field">
+        <label for="weight">Weight</label>
+        <div class="input-row">
+          <input type="number" id="weight" min="0" step="any" placeholder="e.g., 70" required>
+          <select id="weightUnit">
+            <option value="kg">kg</option>
+            <option value="lb">lb</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="height">Height</label>
+        <div class="input-row">
+          <input type="number" id="height" min="0" step="any" placeholder="e.g., 170" required>
+          <select id="heightUnit">
+            <option value="cm">cm</option>
+            <option value="in">in</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="submit" id="calcBtn">Calculate</button>
+        <button type="reset" id="resetBtn">Reset</button>
+      </div>
+    </form>
+
+    <section id="result" class="hidden" aria-live="polite">
+      <div class="result-top">
+        <div class="bmi-number"><span id="bmiNumber">—</span></div>
+        <div id="bmiCategory">—</div>
+      </div>
+
+      <div class="gauge" aria-hidden="true">
+        <div class="gauge-track">
+          <span class="range under">Under</span>
+          <span class="range normal">Normal</span>
+          <span class="range over">Over</span>
+          <span class="range obese">Obese</span>
+        </div>
+        <div class="gauge-marker" id="gaugeMarker"></div>
+      </div>
+
+      <div id="tips" class="tips"></div>
+    </section>
+  </div>
+
+  <script src="bmi.js"></script>
+</body>
+</html>
